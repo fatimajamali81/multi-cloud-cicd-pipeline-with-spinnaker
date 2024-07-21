@@ -1,0 +1,15 @@
+spinnaker:
+  config:
+    profiles:
+      clouddriver:
+        providers:
+          aws:
+            enabled: true
+          azure:
+            enabled: true
+    deploymentEnvironment:
+      providers:
+        aws:
+          enabled: true
+        azure:
+          enabled: true
