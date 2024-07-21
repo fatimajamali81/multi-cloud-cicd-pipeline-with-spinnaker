@@ -1,15 +1,25 @@
 spinnaker:
   config:
+    version: 1.26.6
     profiles:
       clouddriver:
-        providers:
-          aws:
-            enabled: true
-          azure:
-            enabled: true
-    deploymentEnvironment:
-      providers:
         aws:
           enabled: true
         azure:
           enabled: true
+    deploymentEnvironment:
+      size: SMALL
+      type: Distributed
+      accountName: spinnaker-service-account
+      imageId: gcr.io/spinnaker-marketplace/halyard:stable
+      persistentStorage:
+        persistentStoreType: s3
+        s3:
+          bucket: your-spinnaker-bucket
+          rootFolder: front50
+          region: us-west-2
+    providers:
+      aws:
+        enabled: true
+      azure:
+        enabled: true
