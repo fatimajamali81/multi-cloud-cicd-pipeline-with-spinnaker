@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'docker build -t sample-app .'
+                    sh 'docker build -t your-docker-registry/sample-app:latest .'
+                    sh 'docker push your-docker-registry/sample-app:latest'
                 }
             }
         }
