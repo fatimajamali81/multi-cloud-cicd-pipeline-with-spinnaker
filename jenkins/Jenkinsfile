@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    sh 'docker build -t sample-app .'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    sh './scripts/test.sh'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    sh './scripts/deploy.sh'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed.'
+        }
+    }
+}
