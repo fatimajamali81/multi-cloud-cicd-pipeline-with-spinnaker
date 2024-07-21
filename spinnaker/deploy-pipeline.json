@@ -1,0 +1,62 @@
+{
+  "appConfig": {},
+  "pipeline": {
+    "app": "sample-app",
+    "name": "Deploy Pipeline",
+    "stages": [
+      {
+        "name": "Deploy to AWS",
+        "type": "deploy",
+        "clusters": [
+          {
+            "cloudProvider": "aws",
+            "application": "sample-app",
+            "account": "aws-account",
+            "stack": "test",
+            "details": "aws",
+            "strategy": "redblack",
+            "region": "us-west-2",
+            "instanceType": "t2.micro",
+            "amiName": "ami-0abcdef1234567890",
+            "subnetType": "internal",
+            "securityGroups": ["sg-0123456789abcdef0"],
+            "loadBalancers": ["sample-app-lb"]
+          }
+        ]
+      },
+      {
+        "name": "Deploy to Azure",
+        "type": "deploy",
+        "clusters": [
+          {
+            "cloudProvider": "azure",
+            "application": "sample-app",
+            "account": "azure-account",
+            "stack": "test",
+            "details": "azure",
+            "strategy": "redblack",
+            "region": "West Europe",
+            "instanceType": "Standard_B1s",
+            "image": {
+              "imageName": "sample-app-image",
+              "publisher": "Canonical",
+              "offer": "UbuntuServer",
+              "sku": "18.04-LTS"
+            },
+            "loadBalancers": ["sample-app-lb"]
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "type": "git",
+        "enabled": true,
+        "project": "your-git-project",
+        "slug": "sample-app",
+        "branch": "master"
+      }
+    ],
+    "notifications": []
+  }
+}
