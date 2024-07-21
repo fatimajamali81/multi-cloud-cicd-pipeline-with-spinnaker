@@ -15,13 +15,13 @@ This repository contains the configuration and scripts for a CI/CD pipeline usin
 
 1. **Clone the Repository**: Clone this repository to your local machine.
    ```bash
-   git clone https://github.com/yourusername/multi-cloud-cicd-spinnaker.git
-   cd multi-cloud-cicd-spinnaker
+      git clone https://github.com/yourusername/multi-cloud-cicd-spinnaker.git
+      cd multi-cloud-cicd-spinnaker
     ```
 2. **Set Up Spinnaker**: Use Halyard to set up and configure your Spinnaker instance.
    ```bash
-   hal config version edit --version 1.26.6
-   hal deploy apply
+      hal config version edit --version 1.26.6
+      hal deploy apply
     ```
 3. **Configure Cloud Providers**: Set up your AWS and Azure accounts in Spinnaker.
 4. **Provision Resources**: Use Terraform to provision necessary resources in AWS and Azure.
@@ -32,8 +32,8 @@ This repository contains the configuration and scripts for a CI/CD pipeline usin
     ```
 5. **Build and Deploy Application**: Use the provided pipelines and scripts to build, test, and deploy the sample application.
    ```bash
-  cd ..
-  ./scripts/deploy.sh
+     cd ..
+     ./scripts/deploy.sh
     ```
 
 
