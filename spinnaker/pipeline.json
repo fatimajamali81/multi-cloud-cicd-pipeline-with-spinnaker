@@ -1,0 +1,21 @@
+{
+  "app": "sample-app",
+  "stages": [
+    {
+      "type": "findImage",
+      "name": "Find Image",
+      "clusters": ["my-cluster"],
+      "account": "my-account",
+      "regions": ["us-west-2"]
+    },
+    {
+      "type": "deploy",
+      "name": "Deploy Application",
+      "clusters": ["my-cluster"],
+      "account": "my-account",
+      "regions": ["us-west-2"],
+      "provider": "aws"
+    }
+  ],
+  "notifications": []
+}
