@@ -36,12 +36,12 @@ Use the test script to run automated tests
 
 ```sh
 ./scripts/test.sh
-
+```
 ### Deploy the Application
 
 Use the deployment script to deploy the application to both AWS and Azure:
 
 ```sh
 ./scripts/deploy.sh
-
+```
 
