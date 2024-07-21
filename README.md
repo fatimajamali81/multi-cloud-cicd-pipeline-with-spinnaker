@@ -26,9 +26,9 @@ This repository contains the configuration and scripts for a CI/CD pipeline usin
 3. **Configure Cloud Providers**: Set up your AWS and Azure accounts in Spinnaker.
 4. **Provision Resources**: Use Terraform to provision necessary resources in AWS and Azure.
    ```bash
-  cd terraform
-  terraform init
-  terraform apply
+     cd terraform
+     terraform init
+     terraform apply
     ```
 5. **Build and Deploy Application**: Use the provided pipelines and scripts to build, test, and deploy the sample application.
    ```bash
