@@ -62,4 +62,5 @@ Use the deployment script to deploy the application to both AWS and Azure:
 ```sh
 ./scripts/deploy.sh
 ```
-
+### License
+This project is licensed under the MIT License.
